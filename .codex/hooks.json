@@ -1,0 +1,45 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \".codex/hooks/vercel-plugin/hooks/session-start-seen-skills.mjs\""
+          },
+          {
+            "type": "command",
+            "command": "node \".codex/hooks/vercel-plugin/hooks/session-start-profiler.mjs\""
+          },
+          {
+            "type": "command",
+            "command": "node \".codex/hooks/vercel-plugin/hooks/inject-claude-md.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \".codex/hooks/vercel-plugin/hooks/posttooluse-skill-telemetry.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \".codex/hooks/vercel-plugin/hooks/session-end-cleanup.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

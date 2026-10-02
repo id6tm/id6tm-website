@@ -1,0 +1,23 @@
+name: id6tm-website
+version: 1.0.0
+description: APM project for id6tm-website
+author: id6tm
+
+# Which agent platforms to deploy to.
+# Resolution order: --target flag > this field > auto-detect from filesystem.
+# Accepted values: agent-skills, antigravity, claude, codex, copilot, cursor, gemini, grok-build, hermes, kiro, opencode, vscode, windsurf
+targets:
+  - claude
+  - codex
+
+dependencies:
+  apm:
+    - vercel/vercel-plugin
+  mcp:
+    - name: astro-docs
+      registry: false
+      transport: streamable-http
+      url: https://mcp.docs.astro.build/mcp
+
+includes: auto
+scripts: {}

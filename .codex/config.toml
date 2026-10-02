@@ -1,0 +1,7 @@
+[mcp_servers.astro-docs]
+url = "https://mcp.docs.astro.build/mcp"
+id = ""
+
+[mcp_servers.vercel]
+url = "https://mcp.vercel.com"
+id = ""
