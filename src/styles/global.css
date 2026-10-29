@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+	/* color palette */
+	--color-black: #02011d;
+	--color-blue: #1008f4;
+	--color-grey-05: #f8f8ff;
+	--color-grey-60: #676597;
+	--color-orange: #ff612d;
+	--color-hover-gradient: linear-gradient(90deg, #fff 0%, #f8f8ff 100%);
+	--color-stroke-gradient: linear-gradient(90deg, #c8c8c8 0%, #ededf8 100%);
+
+	/* fonts */
+	--font-grotesk: var(--font-grotesk);
+	--font-redhat: var(--font-redhat);
+	--font-outfit: var(--font-outfit);
+}
+
+@utility text-h0-title {
+	font-size: 4rem;
+	line-height: 1;
+	font-family: var(--font-outfit);
+	font-weight: 600;
+	letter-spacing: -0.02em;
+}
+
+@utility text-h1 {
+	font-size: 3.5rem;
+	line-height: 1;
+	font-family: var(--font-outfit);
+	font-weight: 600;
+	letter-spacing: -0.035em;
+}
+
+@utility text-t1 {
+	font-size: 2rem;
+	line-height: 1.2;
+	font-family: var(--font-redhat);
+	font-weight: 400;
+}
+
+@utility text-t2 {
+	font-size: 1.5rem;
+	line-height: 1.2;
+	font-family: var(--font-redhat);
+	font-weight: 400;
+}
+
+@utility text-tag {
+	font-size: 1rem;
+	line-height: 1.2;
+	font-family: var(--font-grotesk);
+	font-weight: 700;
+}
+
+@utility text-h2-5 {
+	font-size: 2rem;
+	line-height: 1;
+	font-family: var(--font-outfit);
+	font-weight: 600;
+	letter-spacing: -0.04em;
+}
+
+@utility text-t3 {
+	font-size: 1.25rem;
+	line-height: 1;
+	font-family: var(--font-outfit);
+	font-weight: 300;
+	letter-spacing: -0.025em;
+}
