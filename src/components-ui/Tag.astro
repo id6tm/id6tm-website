@@ -1,0 +1,42 @@
+---
+const tagColors = {
+	BLACK: "black",
+	BLUE: "blue",
+	ORANGE: "orange",
+	RED: "red",
+	GREEN: "green",
+	PURPLE: "purple",
+} as const;
+
+type TagColor = (typeof tagColors)[keyof typeof tagColors];
+
+const tagColorClasses = {
+	[tagColors.BLACK]: "var(--color-black)",
+	[tagColors.BLUE]: "var(--color-blue)",
+	[tagColors.ORANGE]: "var(--color-orange)",
+	[tagColors.RED]: "var(--color-red)",
+	[tagColors.GREEN]: "var(--color-green)",
+	[tagColors.PURPLE]: "var(--color-purple)",
+} as const;
+
+interface Props {
+	/**
+	 * default — black
+	 */
+	color?: TagColor;
+}
+const { color = tagColors.BLACK } = Astro.props;
+const colorVar = tagColorClasses[color];
+---
+
+<span
+	class="hover:bg-grey-20 flex h-7 cursor-default items-center gap-1 rounded-[120px] border p-1.5 max-md:gap-0.5 max-md:p-0.5 max-sm:h-4.5"
+	style={`border-color: ${colorVar}; color: ${colorVar};`}
+>
+	<i class="h-3.5 w-3.5 max-md:h-3 max-md:w-3.5">
+		<slot name="tag-icon" />
+	</i>
+	<span class="text-tags max-md:text-tags-mobile uppercase">
+		<slot name="tag-label" />
+	</span>
+</span>

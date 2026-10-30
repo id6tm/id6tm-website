@@ -1,14 +1,101 @@
 ---
+import Button from "@ui/Button.svelte";
+import Tag from "@ui/Tag.astro";
+import Tile from "@ui/Tile.astro";
+import Shrimp from "phosphor-astro/Shrimp.astro";
+import { Shrimp as SvelteShrimp } from "phosphor-svelte";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<main>
-		<section class="p-20">
-			<h1 class="text-h0-title">
+	<main class="p-20">
+		<section class="flex flex-col gap-4">
+			<h1 class="text-h1">
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
+			<div class="flex items-center gap-3">
+				<Button size="medium"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button size="medium" color="black"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button size="medium" variant="stroke"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button size="medium" variant="stroke" color="black"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button size="medium" variant="transparent"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button size="medium" variant="transparent" color="black"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+			</div>
+			<div class="flex items-center gap-3">
+				<Button
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button color="black"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button variant="stroke"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button variant="stroke" color="black"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button variant="transparent"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+				<Button variant="transparent" color="black"
+					>Show more
+					<SvelteShrimp slot="btnIcon" />
+				</Button>
+			</div>
+			<div class="flex items-center gap-3">
+				<Tag>
+					<Shrimp slot="tag-icon" />
+					<Fragment slot="tag-label">Tag</Fragment>
+				</Tag>
+				<Tag color="blue">
+					<Shrimp slot="tag-icon" />
+					<Fragment slot="tag-label">Tag</Fragment>
+				</Tag>
+				<Tag color="orange">
+					<Shrimp slot="tag-icon" />
+					<Fragment slot="tag-label">Tag</Fragment>
+				</Tag>
+				<Tag color="green">
+					<Shrimp slot="tag-icon" />
+					<Fragment slot="tag-label">Tag</Fragment>
+				</Tag>
+				<Tag color="red">
+					<Shrimp slot="tag-icon" />
+					<Fragment slot="tag-label">Tag</Fragment>
+				</Tag>
+				<Tag color="purple">
+					<Shrimp slot="tag-icon" />
+					<Fragment slot="tag-label">Tag</Fragment>
+				</Tag>
+			</div>
+
+			<Tile kpi={14} title="intitulé du chiffre" description="Description">
+				<Shrimp slot="tile-icon" />
+			</Tile>
 		</section>
 	</main>
 </Layout>
