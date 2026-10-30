@@ -74,11 +74,7 @@ let sizeClasses: Record<ButtonSize, string> = {
 	{@render children()}
 	{#if btnIcon}
 		<i
-			class={cn(
-				size === "medium"
-					? "[&>svg]:h-8 [&>svg]:w-8"
-					: "[&>svg]:h-6 [&>svg]:w-6",
-			)}
+			class={cn(size === "medium" ? "[&>svg]:size-8" : "[&>svg]:size-6")}
 		>
 			{@render btnIcon()}
 		</i>
