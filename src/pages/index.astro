@@ -1,4 +1,5 @@
 ---
+import Accordion from "@ui/Accordion.svelte";
 import Autocomplete from "@ui/Autocomplete.svelte";
 import Button from "@ui/Button.svelte";
 import Checkbox from "@ui/Checkbox.svelte";
@@ -19,8 +20,25 @@ import Layout from "../layouts/Layout.astro";
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
+			<div class="w-200">
+				<Accordion
+					client:visible
+					items={[
+						{
+							title: "Question 1",
+							content:
+								"Morbi et nunc efficitur, elementum metus ac, egestas lacus. Phasellus dapibus iaculis dui eget eleifend. Pellentesque ac diam enim. Curabitur maximus auctor dui vel vestibulum. Nulla id iaculis nulla, non egestas quam. Phasellus finibus turpis eu volutpat tincidunt. Donec iaculis placerat elit, et sagittis arcu bibendum ac. Phasellus at arcu.",
+						},
+						{
+							title: "Question 2",
+							content:
+								" Sed ullamcorper magna et sollicitudin ultricies. Proin eget sagittis justo, at cursus sem. Quisque auctor pretium nisl eu lacinia. Quisque dolor erat, interdum a volutpat vel, fringilla nec ligula. Ut felis quam, fringilla at massa at, rhoncus ultricies neque. Nunc mollis hendrerit turpis, at congue turpis egestas in. Morbi blandit. ",
+						},
+					]}
+				/>
+			</div>
 			<Select
-				client:load
+				client:visible
 				type="single"
 				class="w-40"
 				items={[
@@ -35,7 +53,7 @@ import Layout from "../layouts/Layout.astro";
 				]}
 			/>
 			<Autocomplete
-				client:load
+				client:visible
 				type="single"
 				inputProps={{
 					placeholder: "Type here...",
@@ -51,10 +69,10 @@ import Layout from "../layouts/Layout.astro";
 					},
 				]}
 			/>
-			<Input client:load placeholder="Type here..." class="w-40" />
+			<Input client:visible placeholder="Type here..." class="w-40" />
 			<div class="flex items-center gap-3">
 				<RadioGroup
-					client:load
+					client:visible
 					value="test1"
 					options={[
 						{
@@ -69,10 +87,10 @@ import Layout from "../layouts/Layout.astro";
 				/>
 			</div>
 			<div class="flex items-center gap-3">
-				<Checkbox client:load checked={false} name="uncheck">
+				<Checkbox client:visible checked={false} name="uncheck">
 					<span slot="label">Libellé</span>
 				</Checkbox>
-				<Checkbox client:load checked name="check">
+				<Checkbox client:visible checked name="check">
 					<span slot="label">Libellé</span>
 				</Checkbox>
 			</div>
