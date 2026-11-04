@@ -18,9 +18,7 @@ let {
 	label,
 	name,
 	id,
-}: Readonly<
-	WithoutChildrenOrChild<Checkbox.RootProps> & CheckboxProps
-> = $props();
+}: WithoutChildrenOrChild<Checkbox.RootProps> & CheckboxProps = $props();
 </script>
 
 <div class="flex items-center gap-2.5 max-md:gap-1.5">

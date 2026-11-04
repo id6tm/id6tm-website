@@ -37,7 +37,7 @@ const {
 	children,
 	btnIcon,
 	disabled = false,
-}: Readonly<ButtonProps> = $props();
+}: ButtonProps = $props();
 
 let variantAndColorClasses: Record<
 	ButtonVariant,
@@ -73,9 +73,7 @@ let sizeClasses: Record<ButtonSize, string> = {
 >
 	{@render children()}
 	{#if btnIcon}
-		<i
-			class={cn(size === "medium" ? "[&>svg]:size-8" : "[&>svg]:size-6")}
-		>
+		<i class={cn(size === "medium" ? "[&>svg]:size-8" : "[&>svg]:size-6")}>
 			{@render btnIcon()}
 		</i>
 	{/if}

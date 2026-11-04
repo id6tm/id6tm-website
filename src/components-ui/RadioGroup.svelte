@@ -15,7 +15,7 @@ let {
 	value = $bindable(""),
 	ref = $bindable(null),
 	...restProps
-}: Readonly<RadioGroupProps> = $props();
+}: RadioGroupProps = $props();
 </script>
 
 <RadioGroup.Root
