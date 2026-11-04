@@ -1,6 +1,6 @@
 <script lang="ts">
 import { cn } from "@utils/cn";
-import { Checkbox, Label } from "bits-ui";
+import { Checkbox, Label, type WithoutChildrenOrChild } from "bits-ui";
 import { CheckIcon, SquareIcon } from "phosphor-svelte";
 import type { Snippet } from "svelte";
 
@@ -10,15 +10,24 @@ interface CheckboxProps {
 	 */
 	id?: string;
 	name: string;
-	checked: boolean;
 	label: Snippet;
 }
-let { checked, label, name, id }: Readonly<CheckboxProps> = $props();
+let {
+	checked = $bindable(false),
+	ref = $bindable(null),
+	label,
+	name,
+	id,
+}: Readonly<
+	WithoutChildrenOrChild<Checkbox.RootProps> & CheckboxProps
+> = $props();
 </script>
 
 <div class="flex items-center gap-2.5 max-md:gap-1.5">
 	<Checkbox.Root
 		id={id ?? name}
+		bind:checked
+		bind:ref
 		aria-labelledby={name}
 		class="inline-flex items-center justify-center"
 		{name}
