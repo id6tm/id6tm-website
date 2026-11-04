@@ -4,6 +4,7 @@ import Button from "@ui/Button.svelte";
 import Checkbox from "@ui/Checkbox.svelte";
 import Input from "@ui/Input.svelte";
 import RadioGroup from "@ui/RadioGroup.svelte";
+import Select from "@ui/Select.svelte";
 import Tag from "@ui/Tag.astro";
 import Tile from "@ui/Tile.astro";
 import Shrimp from "phosphor-astro/Shrimp.astro";
@@ -18,6 +19,21 @@ import Layout from "../layouts/Layout.astro";
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
+			<Select
+				client:load
+				type="single"
+				class="w-40"
+				items={[
+					{
+						value: "max",
+						label: "Max",
+					},
+					{
+						value: "merill",
+						label: "Mérill",
+					},
+				]}
+			/>
 			<Autocomplete
 				client:load
 				type="single"
