@@ -5,6 +5,7 @@ import Autocomplete from "@ui/Autocomplete.svelte";
 import Button from "@ui/Button.svelte";
 import Checkbox from "@ui/Checkbox.svelte";
 import Input from "@ui/Input.svelte";
+import Logo from "@ui/Logo.astro";
 import RadioGroup from "@ui/RadioGroup.svelte";
 import Select from "@ui/Select.svelte";
 import Tag from "@ui/Tag.astro";
@@ -21,6 +22,26 @@ import Layout from "../layouts/Layout.astro";
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
+			<div class="bg-grey-20 flex flex-wrap items-center gap-8">
+				<Logo /> <Logo color="black" /> <Logo color="white" />
+				<Logo size="medium" /> <Logo color="black" size="medium" />
+				<Logo color="white" size="medium" />
+				<Logo size="big" /> <Logo color="black" size="big" />
+				<Logo color="white" size="big" />
+				<Logo layout="horizontal" /> <Logo color="black" layout="horizontal" />
+				<Logo color="white" layout="horizontal" />
+				<Logo size="medium" layout="horizontal" />
+				<Logo color="black" size="medium" layout="horizontal" />
+				<Logo color="white" size="medium" layout="horizontal" />
+				<Logo size="big" layout="horizontal" />
+				<Logo color="black" size="big" layout="horizontal" />
+				<Logo color="white" size="big" layout="horizontal" />
+				<Logo layout="vertical" /> <Logo color="black" layout="vertical" />
+				<Logo color="white" layout="vertical" />
+				<Logo size="medium" layout="vertical" />
+				<Logo color="black" size="medium" layout="vertical" />
+				<Logo color="white" size="medium" layout="vertical" />
+			</div>
 			<TestSelector client:visible />
 			<div class="w-200">
 				<Accordion
