@@ -1,4 +1,5 @@
 ---
+import TestSelector from "@components/TestSelector.svelte";
 import Accordion from "@ui/Accordion.svelte";
 import Autocomplete from "@ui/Autocomplete.svelte";
 import Button from "@ui/Button.svelte";
@@ -20,6 +21,7 @@ import Layout from "../layouts/Layout.astro";
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
+			<TestSelector client:visible />
 			<div class="w-200">
 				<Accordion
 					client:visible
