@@ -14,7 +14,7 @@ let {
 	ref = $bindable(null),
 	items,
 	...restProps
-}: WithoutChildrenOrChild<Accordion.RootProps> & {
+}: WithoutChildrenOrChild<Omit<Accordion.RootProps, "type">> & {
 	items: Item[];
 } = $props();
 </script>
