@@ -23,7 +23,7 @@ import { ShrimpIcon } from "phosphor-svelte";
 		variant="big"
 		title="Call to action"
 		subTitle="Subtitles CTA"
-		description="Description"
+		description=" Integer arcu nibh, consequat ac iaculis non, venenatis et mauris. Donec ultricies, arcu sit amet posuere gravida, ex nisl egestas diam, sed rutrum felis purus ut lacus. Maecenas eget leo. "
 		primaryActionProps={{
 			label: "Show more",
 			btnIcon: ShrimpIcon,
