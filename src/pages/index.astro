@@ -7,6 +7,7 @@ import Button from "@ui/Button.svelte";
 import Checkbox from "@ui/Checkbox.svelte";
 import Input from "@ui/Input.svelte";
 import Logo from "@ui/Logo.astro";
+import Newsletter from "@ui/Newsletter.svelte";
 import RadioGroup from "@ui/RadioGroup.svelte";
 import Select from "@ui/Select.svelte";
 import Tag from "@ui/Tag.astro";
@@ -24,7 +25,8 @@ import Layout from "../layouts/Layout.astro";
 				<span class="text-orange">construction</span>
 			</h1>
 
-			<TestCTA />
+			<Newsletter client:visible />
+			<TestCTA client:visible />
 			<div class="bg-grey-20 flex flex-wrap items-center gap-8">
 				<Logo /> <Logo color="black" /> <Logo color="white" />
 				<Logo size="medium" /> <Logo color="black" size="medium" />

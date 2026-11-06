@@ -9,6 +9,7 @@ type ButtonSize = "small" | "medium";
 
 export interface ButtonProps {
 	children: Snippet;
+	type?: HTMLButtonElement["type"];
 	btnIcon?: Snippet | Component;
 	/**
 	 * only from another Svelte component — won't work from Astro
@@ -30,6 +31,7 @@ export interface ButtonProps {
 }
 
 const {
+	type = "button",
 	color = "orange",
 	variant = "filled",
 	size = "small",
@@ -70,7 +72,7 @@ const isSnippet = (val: unknown): val is Snippet =>
 </script>
 
 <Button.Root
-	type="button"
+	{type}
 	class={`text-button flex cursor-pointer items-center gap-2.5 rounded transition-colors duration-300 ${variantAndColorClasses[variant][color]} ${sizeClasses[size]}`}
 	{onclick}
 	{disabled}
