@@ -1,15 +1,15 @@
 <script lang="ts">
 import { cn } from "@utils/cn";
 import { Button } from "bits-ui";
-import type { Snippet } from "svelte";
+import type { Component, Snippet } from "svelte";
 
 type ButtonVariant = "filled" | "stroke" | "transparent";
 type ButtonColor = "black" | "orange";
 type ButtonSize = "small" | "medium";
 
-interface ButtonProps {
+export interface ButtonProps {
 	children: Snippet;
-	btnIcon?: Snippet;
+	btnIcon?: Snippet | Component;
 	/**
 	 * only from another Svelte component — won't work from Astro
 	 */
@@ -63,6 +63,10 @@ let sizeClasses: Record<ButtonSize, string> = {
 	small: "px-3 py-2.5 h-11",
 	medium: " p-5",
 };
+
+const isSnippet = (val: unknown): val is Snippet =>
+	typeof val === "function" &&
+	Boolean((val as any)[Symbol.for("svelte.snippet")]);
 </script>
 
 <Button.Root
@@ -74,7 +78,12 @@ let sizeClasses: Record<ButtonSize, string> = {
 	{@render children()}
 	{#if btnIcon}
 		<i class={cn(size === "medium" ? "[&>svg]:size-8" : "[&>svg]:size-6")}>
-			{@render btnIcon()}
+			{#if isSnippet(btnIcon)}
+				{@render btnIcon()}
+			{:else}
+				{@const BtnIcon = btnIcon as Component}
+				<BtnIcon />
+			{/if}
 		</i>
 	{/if}
 </Button.Root>

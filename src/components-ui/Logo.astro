@@ -58,7 +58,7 @@ const logosMapping: Record<
 
 <div
 	class={cn(
-		"font-outfit flex w-42.5 items-center gap-3.5 font-bold",
+		"font-outfit flex max-w-42.5 items-center gap-3.5 font-bold",
 		size === logoSizes.SMALL
 			? "text-[16px] tracking-[-0.16px]"
 			: "text-[24px] tracking-[-0.24px]",
@@ -66,6 +66,6 @@ const logosMapping: Record<
 		layout === logoLayouts.VERTICAL && "flex-col gap-2.5",
 	)}
 >
-	<Image alt={`logo-${color}-${size}-${layout}`} src={logosMapping[color]} />
+	<Image alt="logo id6" src={logosMapping[color]} />
 	{size === logoSizes.BIG ? "international développement système" : "id6"}
 </div>

@@ -51,7 +51,7 @@
 	font-family: var(--font-outfit);
 	font-size: 2.5rem;
 	font-weight: 600;
-	letter-spacing: -0.5em;
+	letter-spacing: -0.8px;
 }
 
 @utility text-h3 {
