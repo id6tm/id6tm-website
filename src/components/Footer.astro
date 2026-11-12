@@ -1,0 +1,111 @@
+---
+import Logo from "@ui/Logo.astro";
+import LinkedInLogo from "phosphor-astro/LinkedinLogo.astro";
+
+const internalLinks = [
+	{
+		label: "À propos",
+		href: "#",
+	},
+	{
+		label: "Blog",
+		href: "#",
+	},
+	{
+		label: "Boutique",
+		href: "#",
+	},
+	{
+		label: "Contact",
+		href: "#",
+	},
+	{
+		label: "Diagoriente",
+		href: "#",
+	},
+	{
+		label: "EAM Connect",
+		href: "#",
+	},
+	{
+		label: "Oribox",
+		href: "#",
+	},
+	{
+		label: "PICMA",
+		href: "#",
+	},
+	{
+		label: "Formations",
+		href: "#",
+	},
+	{
+		label: "Mentions légales",
+		href: "#",
+	},
+	{
+		label: "Gestion des cookies",
+		href: "#",
+	},
+	{
+		label: "Politique de confidentialité",
+		href: "#",
+	},
+];
+
+const externalLinks = [
+	{
+		label: "diagoriente.gouv.fr",
+		href: "diagoriente.gouv.fr",
+	},
+	{
+		label: "euroappmobility.eu",
+		href: "euroappmobility.eu",
+	},
+	{
+		label: "pilotagecma.fr",
+		href: "pilotagecma.fr",
+	},
+	{
+		label: "LinkedIn d’id6",
+		href: "https://www.linkedin.com/company/id6/posts/?feedView=all",
+	},
+];
+---
+
+<div class="bg-stroke-gradient pt-px">
+	<section
+		class="bg-grey-05 flex items-center gap-6 px-30 py-8 max-md:flex-col max-md:items-start max-md:gap-5 max-md:px-5 max-md:py-12"
+	>
+		<div class="max-md:hidden"><Logo layout="vertical" size="big" /></div>
+		<div class="md:hidden"><Logo layout="horizontal" size="medium" /></div>
+		<p class="text-t3 w-70.5 shrink-0 max-md:hidden">
+			Experts, depuis 25 ans, dans la conception de dispositifs pédagogiques
+			innovants pour l’orientation, l’insertion, l’éducation et la formation.
+		</p>
+
+		<nav class="flex flex-wrap">
+			{internalLinks.map((link) => (
+				<a href={link.href} class="text-tag text-grey-60 px-3 py-2">
+					{link.label}
+				</a>
+			))}
+		</nav>
+
+		<nav
+			class="flex w-45 shrink-0 flex-wrap items-center justify-end max-md:self-end"
+		>
+			{externalLinks.map((link, i) => (
+				<a
+					href={link.href}
+					class="text-tag text-blue flex items-center gap-2.5 px-3 py-2"
+				>
+					{i === externalLinks.length - 1 && (
+						<LinkedInLogo class="bg-blue size-5 text-white shadow-[inset_0_0_1px_3px_#F8F8FF]" />
+					)}
+					{link.label}
+				</a>
+			))}
+		</nav>
+	</section>
+</div>

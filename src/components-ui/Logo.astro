@@ -26,6 +26,12 @@ const logoLayouts = {
 } as const;
 type LogoLayout = (typeof logoLayouts)[keyof typeof logoLayouts];
 
+const textModes = {
+	ACRONYM: "acronym",
+	FULL_TEXT: "full-text",
+} as const;
+type TextMode = (typeof textModes)[keyof typeof textModes];
+
 interface Props {
 	/**
 	 * default — orange
@@ -39,11 +45,16 @@ interface Props {
 	 * default — icon only
 	 */
 	layout?: LogoLayout;
+	/**
+	 * default — acronym
+	 */
+	textMode?: TextMode;
 }
 const {
 	color = logoColors.ORANGE,
 	size = logoSizes.SMALL,
 	layout = logoLayouts.ICON_ONLY,
+	textMode = textModes.ACRONYM,
 } = Astro.props;
 
 const logosMapping: Record<
@@ -59,13 +70,22 @@ const logosMapping: Record<
 <div
 	class={cn(
 		"font-outfit flex max-w-42.5 items-center gap-3.5 font-bold",
-		size === logoSizes.SMALL
-			? "text-[16px] tracking-[-0.16px]"
-			: "text-[24px] tracking-[-0.24px]",
-		size === logoSizes.BIG && "leading-[90%]",
+		size === logoSizes.SMALL && "text-[16px] tracking-[-0.16px]",
+		size === logoSizes.MEDIUM && "text-[24px] tracking-[-0.24px]",
+		size === logoSizes.BIG && "text-[40px] leading-[90%] tracking-[-0.4px]",
 		layout === logoLayouts.VERTICAL && "flex-col gap-2.5",
 	)}
 >
-	<Image alt="logo id6" src={logosMapping[color]} />
-	{size === logoSizes.BIG ? "international développement système" : "id6"}
+	<Image
+		alt="logo id6"
+		src={logosMapping[color]}
+		class={cn(
+			size === logoSizes.BIG && "size-15 max-w-15",
+			size === logoSizes.MEDIUM && "size-10 max-w-10",
+			size === logoSizes.SMALL && "size-6 max-w-6",
+		)}
+	/>
+	{textMode === textModes.FULL_TEXT
+		? "international développement système"
+		: "id6"}
 </div>
