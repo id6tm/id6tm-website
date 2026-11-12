@@ -7,8 +7,8 @@ import { cn } from "@utils/cn";
 import type { Component } from "svelte";
 import { MediaQuery } from "svelte/reactivity";
 
-const { current: isMobile } = new MediaQuery("max-width: 767px");
-const { current: isLarge } = new MediaQuery("min-width: 1024px");
+const isMobile = new MediaQuery("max-width: 767px");
+const isLarge = new MediaQuery("min-width: 1024px");
 
 interface SelectorItem<TItem> {
 	label: string;
@@ -51,10 +51,10 @@ function onTabClick(val: TItem) {
 				)}
 				style={value === itemValue ? "color: white" : ""}
 			>
-				{#if !isMobile}
+				{#if !isMobile.current}
 					{label}
 				{/if}
-				{#if isMobile || isLarge}
+				{#if isMobile.current || isLarge.current}
 					<Icon class="size-6" />
 				{/if}
 			</button>

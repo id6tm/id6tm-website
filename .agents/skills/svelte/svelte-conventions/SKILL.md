@@ -17,4 +17,4 @@
 - **Tailwind First:** Use Tailwind classes for all styling.
 - **Conditional Style** Use cn to apply conditional styling, except for dynamic styling like colors mappings (use inline style).
 - **UI Library Support:** Use Bits UI (or similar) for complex components (Select, Dialog) while maintaining Tailwind for layout and spacing.
-- **Import Style:** Prefer namespace imports over explicit imports as it is best supported by Astro.
+- **Import Style:** Prefer explicit imports over namespace imports.

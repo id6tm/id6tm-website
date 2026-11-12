@@ -1,6 +1,7 @@
 ---
 import { Font } from "astro:assets";
 import "../styles/global.css";
+import Header from "@components/Header/Header.svelte";
 ---
 
 <!doctype html>
@@ -16,6 +17,7 @@ import "../styles/global.css";
 		<title>Id6 - Site en construction</title>
 	</head>
 	<body class="font-redhat text-black">
+		<Header client:load />
 		<slot />
 	</body>
 </html>
