@@ -10,7 +10,7 @@ const tagColors = {
 
 type TagColor = (typeof tagColors)[keyof typeof tagColors];
 
-const tagColorClasses = {
+const tagColorClasses: Record<TagColor, string> = {
 	[tagColors.BLACK]: "var(--color-black)",
 	[tagColors.BLUE]: "var(--color-blue)",
 	[tagColors.ORANGE]: "var(--color-orange)",

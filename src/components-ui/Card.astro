@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+import { cn } from "@utils/cn";
+import type { ImageMetadata } from "astro";
+
+const cardOrientations = {
+	HORIZONTAL: "horizontal",
+	VERTICAL: "vertical",
+} as const;
+type CardOrientation = (typeof cardOrientations)[keyof typeof cardOrientations];
+
+const cardColors = {
+	BLUE: "blue",
+	ORANGE: "orange",
+	YELLOW: "yellow",
+} as const;
+type CardColor = (typeof cardColors)[keyof typeof cardColors];
+
+const cardColorClasses: Record<CardColor, string> = {
+	[cardColors.BLUE]: "var(--color-blue)",
+	[cardColors.ORANGE]: "var(--color-orange)",
+	[cardColors.YELLOW]: "var(--color-yellow)",
+} as const;
+
+interface Props {
+	title: string;
+	description: string;
+	color: CardColor;
+	imageSrc: string | ImageMetadata;
+	/**
+	 * default — vertical
+	 */
+	orientation?: CardOrientation;
+}
+const {
+	color,
+	description,
+	imageSrc,
+	title,
+	orientation = cardOrientations.VERTICAL,
+} = Astro.props;
+
+// Determine if the image is a remote URL (CMS) or a local path
+const isRemote = typeof imageSrc === "string";
+---
+
+<!-- colored wrapper -->
+<div
+	class="h-fit w-fit rounded-3xl"
+	style={`background-color: ${cardColorClasses[color]};`}
+>
+	<!-- card -->
+	<div
+		class={cn(
+			"flex items-center gap-8 rounded-3xl bg-white p-8 pt-5 max-md:p-6 max-sm:px-4 max-sm:pt-3 max-sm:pb-5",
+			orientation === cardOrientations.VERTICAL
+				? "w-[384px] flex-col max-md:w-74 max-sm:w-65"
+				: "w-147 max-md:w-113.5 max-sm:w-87.5",
+		)}
+		style="border: 1px solid  #C8C8C8;"
+	>
+		<!-- card image -->
+		{isRemote ? (
+			<div
+				class={cn(
+					orientation === cardOrientations.VERTICAL
+						? "h-47.75 w-86 max-md:h-37.75 max-md:w-68 max-sm:h-32.75 max-sm:w-59"
+						: "h-39 w-39 max-sm:h-24 max-sm:w-24",
+				)}
+			>
+				<img
+					src={imageSrc}
+					alt="card-image"
+					class="h-full w-full object-contain"
+				/>
+			</div>
+		) : (
+			<Image
+				src={imageSrc}
+				alt="card-images"
+				class={cn(
+					"object-contain",
+					orientation === cardOrientations.VERTICAL
+						? "h-47.75 w-86 max-md:h-37.75 max-md:w-68 max-sm:h-32.75 max-sm:w-59"
+						: "max-sm:h-24 max-sm:w-24",
+				)}
+			/>
+		)}
+
+		<!-- card content -->
+		<div
+			class={cn(
+				"flex flex-col gap-6",
+				orientation === cardOrientations.HORIZONTAL && "py-3",
+			)}
+		>
+			{orientation === cardOrientations.VERTICAL && (
+				<div class="flex items-center justify-between">
+					<slot name="card-category-tag" />
+					<slot name="card-subject-tag" />
+				</div>
+			)}
+			<h6 class="text-h2-5 max-sm:text-h3-mobile">{title}</h6>
+			<p class="text-t2 max-md:text-t3 max-sm:text-t3-mobile">{description}</p>
+			{orientation === cardOrientations.VERTICAL && (
+				<div class="self-end md:hidden">
+					<slot name="card-mobile-button" />
+				</div>
+			)}
+		</div>
+	</div>
+</div>

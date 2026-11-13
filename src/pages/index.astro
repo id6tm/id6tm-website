@@ -1,209 +1,103 @@
 ---
-import TestCTA from "@components/TestCTA.svelte";
-import TestSelector from "@components/TestSelector.svelte";
-import Accordion from "@ui/Accordion.svelte";
-import Autocomplete from "@ui/Autocomplete.svelte";
+import Diagoriente from "@assets/diagoriente.png";
 import Button from "@ui/Button.svelte";
-import Checkbox from "@ui/Checkbox.svelte";
-import Input from "@ui/Input.svelte";
-import Logo from "@ui/Logo.astro";
-import Newsletter from "@ui/Newsletter.svelte";
-import RadioGroup from "@ui/RadioGroup.svelte";
-import Select from "@ui/Select.svelte";
+import Card from "@ui/Card.astro";
 import Tag from "@ui/Tag.astro";
-import Tile from "@ui/Tile.astro";
 import Shrimp from "phosphor-astro/Shrimp.astro";
-import { Shrimp as SvelteShrimp } from "phosphor-svelte";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<main class="px-30 py-10">
+	<main class="px-30 py-10 max-md:p-3">
 		<section class="flex flex-col gap-4">
 			<h1 class="text-h1">
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
 
-			<Newsletter client:visible />
-			<TestCTA client:visible />
-			<div class="bg-grey-20 flex flex-wrap items-center gap-8">
-				<Logo /> <Logo color="black" /> <Logo color="white" />
-				<Logo size="medium" /> <Logo color="black" size="medium" />
-				<Logo color="white" size="medium" />
-				<Logo size="big" /> <Logo color="black" size="big" />
-				<Logo color="white" size="big" />
-				<Logo layout="horizontal" /> <Logo color="black" layout="horizontal" />
-				<Logo color="white" layout="horizontal" />
-				<Logo size="medium" layout="horizontal" />
-				<Logo color="black" size="medium" layout="horizontal" />
-				<Logo color="white" size="medium" layout="horizontal" />
-				<Logo size="big" layout="horizontal" />
-				<Logo color="black" size="big" layout="horizontal" />
-				<Logo color="white" size="big" layout="horizontal" />
-				<Logo layout="vertical" /> <Logo color="black" layout="vertical" />
-				<Logo color="white" layout="vertical" />
-				<Logo size="medium" layout="vertical" />
-				<Logo color="black" size="medium" layout="vertical" />
-				<Logo color="white" size="medium" layout="vertical" />
+			<div class="flex gap-6 max-md:flex-col">
+				<Card
+					color="blue"
+					title="Diagoriente"
+					description="Soutenir les transitions professionnelles"
+					imageSrc={Diagoriente}
+				>
+					<Tag slot="card-category-tag">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Tag slot="card-subject-tag" color="blue">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Button slot="card-mobile-button" variant="transparent" color="black">
+						<Shrimp slot="btnIcon" />
+						Show more</Button
+					>
+				</Card>
+				<Card
+					orientation="horizontal"
+					color="blue"
+					title="Diagoriente"
+					description="Soutenir les transitions professionnelles"
+					imageSrc={Diagoriente}
+				>
+					<Tag slot="card-category-tag">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Tag slot="card-subject-tag" color="blue">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Button slot="card-mobile-button" variant="transparent" color="black">
+						<Shrimp slot="btnIcon" />
+						Show more</Button
+					>
+				</Card>
 			</div>
-			<TestSelector client:visible />
-			<div class="w-200">
-				<Accordion
-					client:visible
-					items={[
-						{
-							title: "Question 1",
-							content:
-								"Morbi et nunc efficitur, elementum metus ac, egestas lacus. Phasellus dapibus iaculis dui eget eleifend. Pellentesque ac diam enim. Curabitur maximus auctor dui vel vestibulum. Nulla id iaculis nulla, non egestas quam. Phasellus finibus turpis eu volutpat tincidunt. Donec iaculis placerat elit, et sagittis arcu bibendum ac. Phasellus at arcu.",
-						},
-						{
-							title: "Question 2",
-							content:
-								" Sed ullamcorper magna et sollicitudin ultricies. Proin eget sagittis justo, at cursus sem. Quisque auctor pretium nisl eu lacinia. Quisque dolor erat, interdum a volutpat vel, fringilla nec ligula. Ut felis quam, fringilla at massa at, rhoncus ultricies neque. Nunc mollis hendrerit turpis, at congue turpis egestas in. Morbi blandit. ",
-						},
-					]}
-				/>
+			<div class="flex gap-6 max-md:flex-col">
+				<Card
+					color="blue"
+					title="Diagoriente"
+					description="Soutenir les transitions professionnelles"
+					imageSrc="https://as2.ftcdn.net/v2/jpg/02/77/81/69/1000_F_277816957_9D8bIwXGdKzzMeTttNJXDb8c9DqGwEtv.jpg"
+				>
+					<Tag slot="card-category-tag">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Tag slot="card-subject-tag" color="blue">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Button slot="card-mobile-button" variant="transparent" color="black">
+						<Shrimp slot="btnIcon" />
+						Show more</Button
+					>
+				</Card>
+				<Card
+					orientation="horizontal"
+					color="blue"
+					title="Diagoriente"
+					description="Soutenir les transitions professionnelles"
+					imageSrc="https://as2.ftcdn.net/v2/jpg/02/77/81/69/1000_F_277816957_9D8bIwXGdKzzMeTttNJXDb8c9DqGwEtv.jpg"
+				>
+					<Tag slot="card-category-tag">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Tag slot="card-subject-tag" color="blue">
+						<Shrimp slot="tag-icon" />
+						<span slot="tag-label">tag</span>
+					</Tag>
+					<Button slot="card-mobile-button" variant="transparent" color="black">
+						<Shrimp slot="btnIcon" />
+						Show more</Button
+					></Card
+				>
 			</div>
-			<Select
-				client:visible
-				type="single"
-				class="w-40"
-				items={[
-					{
-						value: "max",
-						label: "Max",
-					},
-					{
-						value: "merill",
-						label: "Mérill",
-					},
-				]}
-			/>
-			<Autocomplete
-				client:visible
-				type="single"
-				inputProps={{
-					placeholder: "Type here...",
-				}}
-				items={[
-					{
-						value: "max",
-						label: "Max",
-					},
-					{
-						value: "merill",
-						label: "Mérill",
-					},
-				]}
-			/>
-			<Input client:visible placeholder="Type here..." class="w-40" />
-			<div class="flex items-center gap-3">
-				<RadioGroup
-					client:visible
-					value="test1"
-					options={[
-						{
-							label: "Libellé 1",
-							value: "test1",
-						},
-						{
-							label: "Libellé 2",
-							value: "test2",
-						},
-					]}
-				/>
-			</div>
-			<div class="flex items-center gap-3">
-				<Checkbox client:visible checked={false} name="uncheck">
-					<span slot="label">Libellé</span>
-				</Checkbox>
-				<Checkbox client:visible checked name="check">
-					<span slot="label">Libellé</span>
-				</Checkbox>
-			</div>
-			<div class="flex items-center gap-3">
-				<Button size="medium"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button size="medium" color="black"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button size="medium" variant="stroke"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button size="medium" variant="stroke" color="black"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button size="medium" variant="transparent"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button size="medium" variant="transparent" color="black"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-			</div>
-			<div class="flex items-center gap-3">
-				<Button
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button color="black"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button variant="stroke"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button variant="stroke" color="black"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button variant="transparent"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-				<Button variant="transparent" color="black"
-					>Show more
-					<SvelteShrimp slot="btnIcon" />
-				</Button>
-			</div>
-			<div class="flex items-center gap-3">
-				<Tag>
-					<Shrimp slot="tag-icon" />
-					<Fragment slot="tag-label">Tag</Fragment>
-				</Tag>
-				<Tag color="blue">
-					<Shrimp slot="tag-icon" />
-					<Fragment slot="tag-label">Tag</Fragment>
-				</Tag>
-				<Tag color="orange">
-					<Shrimp slot="tag-icon" />
-					<Fragment slot="tag-label">Tag</Fragment>
-				</Tag>
-				<Tag color="green">
-					<Shrimp slot="tag-icon" />
-					<Fragment slot="tag-label">Tag</Fragment>
-				</Tag>
-				<Tag color="red">
-					<Shrimp slot="tag-icon" />
-					<Fragment slot="tag-label">Tag</Fragment>
-				</Tag>
-				<Tag color="purple">
-					<Shrimp slot="tag-icon" />
-					<Fragment slot="tag-label">Tag</Fragment>
-				</Tag>
-			</div>
-
-			<Tile kpi={14} title="intitulé du chiffre" description="Description">
-				<Shrimp slot="tile-icon" />
-			</Tile>
+			<div class="flex items-end gap-6"></div>
 		</section>
 	</main>
 </Layout>

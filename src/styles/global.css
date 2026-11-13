@@ -13,6 +13,7 @@
 	--color-red: #ff2602;
 	--color-green: #0dda4a;
 	--color-purple: #dd10cf;
+	--color-yellow: #ffda00;
 
 	--background-image-hover-gradient: linear-gradient(
 		90deg,
@@ -66,7 +67,7 @@
 	font-size: 1.25rem;
 	font-weight: 600;
 	line-height: 100%; /* 20px */
-	letter-spacing: -0.25em;
+	letter-spacing: -0.28px;
 }
 
 @utility text-t1 {
