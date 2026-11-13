@@ -30,6 +30,29 @@
 	--font-grotesk: var(--font-grotesk);
 	--font-redhat: var(--font-redhat);
 	--font-outfit: var(--font-outfit);
+
+	/* card animation with 2 bumps */
+	--ease-card-bump: linear(
+		0,
+		0.06 2%,
+		0.26 5%,
+		0.72 9%,
+		1.18 13%,
+		1.38 17%,
+		1.32 21%,
+		1.06 26%,
+		0.86 30%,
+		0.82 33%,
+		0.91 38%,
+		1.07 44%,
+		1.11 48%,
+		1.06 53%,
+		0.98 60%,
+		0.97 64%,
+		0.99 72%,
+		1.008 80%,
+		1
+	);
 }
 
 @utility text-h0-title {
