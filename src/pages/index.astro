@@ -1,9 +1,4 @@
 ---
-import Diagoriente from "@assets/diagoriente.png";
-import Button from "@ui/Button.svelte";
-import Card from "@ui/Card.astro";
-import Tag from "@ui/Tag.astro";
-import Shrimp from "phosphor-astro/Shrimp.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -14,48 +9,6 @@ import Layout from "../layouts/Layout.astro";
 				Site en {" "}
 				<span class="text-orange">construction</span>
 			</h1>
-
-			<div class="flex gap-6 max-md:flex-col">
-				<Card
-					color="blue"
-					title="Diagoriente"
-					description="Soutenir les transitions professionnelles"
-					imageSrc={Diagoriente}
-				>
-					<Tag slot="card-category-tag">
-						<Shrimp slot="tag-icon" />
-						<span slot="tag-label">tag</span>
-					</Tag>
-					<Tag slot="card-subject-tag" color="blue">
-						<Shrimp slot="tag-icon" />
-						<span slot="tag-label">tag</span>
-					</Tag>
-					<Button slot="card-mobile-button" variant="transparent" color="black">
-						<Shrimp slot="btnIcon" />
-						Show more</Button
-					>
-				</Card>
-				<Card
-					orientation="horizontal"
-					color="blue"
-					title="Diagoriente"
-					description="Soutenir les transitions professionnelles"
-					imageSrc={Diagoriente}
-				>
-					<Tag slot="card-category-tag">
-						<Shrimp slot="tag-icon" />
-						<span slot="tag-label">tag</span>
-					</Tag>
-					<Tag slot="card-subject-tag" color="blue">
-						<Shrimp slot="tag-icon" />
-						<span slot="tag-label">tag</span>
-					</Tag>
-					<Button slot="card-mobile-button" variant="transparent" color="black">
-						<Shrimp slot="btnIcon" />
-						Show more</Button
-					>
-				</Card>
-			</div>
 		</section>
 	</main>
 </Layout>
