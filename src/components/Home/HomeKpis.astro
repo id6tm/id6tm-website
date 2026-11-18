@@ -19,33 +19,69 @@ import UsersThree from "phosphor-astro/UsersThree.astro";
 	<div
 		class="flex justify-center gap-6 max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3"
 	>
-		<Tile
-			kpi="+1M"
-			title="Personnes touchées"
-			description="Des dispositifs à l’impact social éprouvé."
+		<div
+			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 0ms"
 		>
-			<UsersFour slot="tile-icon" />
-		</Tile>
-		<Tile
-			kpi="2000"
-			title="Année de création"
-			description="Des années de création et d’innovation."
+			<Tile
+				kpi="+1M"
+				title="Personnes touchées"
+				description="Des dispositifs à l’impact social éprouvé."
+			>
+				<UsersFour slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 300ms"
 		>
-			<ToggleLeft slot="tile-icon" />
-		</Tile>
-		<Tile
-			kpi="24"
-			title="Membres de l’association"
-			description="Des expertises complémentaires."
+			<Tile
+				kpi="2000"
+				title="Année de création"
+				description="Des années de création et d’innovation."
+			>
+				<ToggleLeft slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 600ms"
 		>
-			<UsersThree slot="tile-icon" />
-		</Tile>
-		<Tile
-			kpi="16"
-			title="Projets primés en Europe"
-			description="Des innovations reconnues."
+			<Tile
+				kpi="24"
+				title="Membres de l’association"
+				description="Des expertises complémentaires."
+			>
+				<UsersThree slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 900ms"
 		>
-			<Medal slot="tile-icon" />
-		</Tile>
+			<Tile
+				kpi="16"
+				title="Projets primés en Europe"
+				description="Des innovations reconnues."
+			>
+				<Medal slot="tile-icon" />
+			</Tile>
+		</div>
 	</div>
 </section>
+
+<script>
+const observer = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("opacity-100", "translate-y-0");
+				observer.unobserve(entry.target);
+			}
+		});
+	},
+	{ threshold: 0.1 },
+);
+
+document.querySelectorAll(".reveal-item").forEach((el) => observer.observe(el));
+</script>
