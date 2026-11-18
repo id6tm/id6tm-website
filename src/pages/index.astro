@@ -1,11 +1,12 @@
 ---
 import HomeHeroeImage from "@assets/heroes/home.png?url";
 import HomeKpis from "@components/Home/HomeKpis.astro";
+import ProjectsSection from "@components/Home/ProjectsSection.astro";
+import AppLayout from "@layouts/AppLayout.astro";
 import Hero from "@ui/Hero.astro";
-import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
+<AppLayout>
 	<main class="flex flex-col">
 		<Hero
 			title="L’innovation au service des transitions professionnelles"
@@ -17,5 +18,7 @@ import Layout from "../layouts/Layout.astro";
 		/>
 
 		<HomeKpis />
+
+		<ProjectsSection />
 	</main>
-</Layout>
+</AppLayout>

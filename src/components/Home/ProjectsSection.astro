@@ -1,0 +1,60 @@
+---
+import Diagoriente from "@assets/diagoriente.svg";
+import EamConnect from "@assets/eam-connect.svg";
+import Formations from "@assets/formations.svg";
+import Oribox from "@assets/oribox.svg";
+import Picma from "@assets/picma.svg";
+import SectionLayout from "@layouts/SectionLayout.astro";
+import Card from "@ui/Card.astro";
+import { cardColors } from "@ui/constants";
+
+const projects = [
+	{
+		title: "Diagoriente",
+		description: "Soutenir les transitions professionnelles",
+		imageSrc: Diagoriente,
+		color: cardColors.BLUE,
+	},
+	{
+		title: "Oribox",
+		description: "Accompagner les démarches d’orientation par le jeu",
+		imageSrc: Oribox,
+		color: cardColors.ORANGE,
+	},
+	{
+		title: "EAM Connect",
+		description: "Outiller les mobilités internationales des apprentis",
+		imageSrc: EamConnect,
+		color: cardColors.BLUE,
+	},
+	{
+		title: "Formations",
+		description: "Faire évoluer ses pratiques et sa posture professionnelle",
+		imageSrc: Formations,
+		color: cardColors.YELLOW,
+	},
+	{
+		title: "PICMA",
+		description: "Optimiser le suivi financier du plan France 2030",
+		imageSrc: Picma,
+		color: cardColors.ORANGE,
+	},
+];
+---
+
+<SectionLayout
+	title="Nos projets"
+	subTitle="id6 conçoit des dispositifs pédagogiques et numériques favorisant l'orientation, la reconnaissance des compétences, la formation, l'insertion professionnelle et les transitions de carrière."
+>
+	<div class="flex flex-wrap gap-6 max-lg:gap-5 max-sm:flex-col max-sm:gap-3">
+		{projects.map((project) => (
+			<Card
+				title={project.title}
+				description={project.description}
+				imageSrc={project.imageSrc}
+				color={project.color}
+				orientation="horizontal"
+			/>
+		))}
+	</div>
+</SectionLayout>
