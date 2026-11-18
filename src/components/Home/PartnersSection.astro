@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import AdhocLab from "@assets/partners/adhoclab.svg";
+import AgenceNationaleSport from "@assets/partners/ans.svg";
+import Cnam from "@assets/partners/cnam.svg";
+import DefenseMobilite from "@assets/partners/defense-mobilite.svg";
+import Eam from "@assets/partners/eam.svg";
+import Enpjj from "@assets/partners/enpjj.svg";
+import France2030 from "@assets/partners/france-2030.svg";
+import FranceTravail from "@assets/partners/france-travail.svg";
+import MinistereJustice from "@assets/partners/ministere-justice.svg";
+import MinistereSolidarites from "@assets/partners/ministere-solidatites.svg";
+import ServiceCivique from "@assets/partners/service-civique.svg";
+import UnionMaisonsLocales from "@assets/partners/uml.svg";
+import SectionLayout from "@layouts/SectionLayout.astro";
+
+const images = [
+	MinistereSolidarites,
+	France2030,
+	DefenseMobilite,
+	MinistereJustice,
+	FranceTravail,
+	UnionMaisonsLocales,
+	ServiceCivique,
+	AgenceNationaleSport,
+	Enpjj,
+	Cnam,
+	Eam,
+	AdhocLab,
+];
+---
+
+<SectionLayout
+	title="Nos partenaires"
+	subTitle="id6 a développé au fil des années un écosystème de partenaires riche et diversifié découlant de nombreuses phases expérimentales."
+>
+	<div class="relative w-300 overflow-hidden">
+		<!-- The track -->
+		<div
+			class="animate-scroll flex w-max items-center gap-6 max-lg:gap-5 max-sm:gap-3"
+		>
+			{[...images, ...images].map((src) => (
+				<Image
+					src={src}
+					alt="Carousel Item"
+					class="size-45 object-contain max-lg:size-34.5 max-md:size-23.75"
+				/>
+			))}
+		</div>
+	</div>
+</SectionLayout>
