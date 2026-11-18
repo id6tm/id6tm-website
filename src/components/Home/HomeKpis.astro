@@ -15,7 +15,7 @@ import UsersThree from "phosphor-astro/UsersThree.astro";
 		class="flex justify-center gap-6 max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3"
 	>
 		<div
-			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
 			style="transition-delay: 0ms"
 		>
 			<Tile
@@ -27,7 +27,7 @@ import UsersThree from "phosphor-astro/UsersThree.astro";
 			</Tile>
 		</div>
 		<div
-			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
 			style="transition-delay: 300ms"
 		>
 			<Tile
@@ -39,7 +39,7 @@ import UsersThree from "phosphor-astro/UsersThree.astro";
 			</Tile>
 		</div>
 		<div
-			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
 			style="transition-delay: 600ms"
 		>
 			<Tile
@@ -51,7 +51,7 @@ import UsersThree from "phosphor-astro/UsersThree.astro";
 			</Tile>
 		</div>
 		<div
-			class="reveal-item translate-y-10 opacity-0 transition-all duration-700 ease-out"
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
 			style="transition-delay: 900ms"
 		>
 			<Tile
@@ -70,6 +70,8 @@ const observer = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
+				// Remove the initial offset and add the final position
+				entry.target.classList.remove("translate-y-30");
 				entry.target.classList.add("opacity-100", "translate-y-0");
 				observer.unobserve(entry.target);
 			}
@@ -78,5 +80,7 @@ const observer = new IntersectionObserver(
 	{ threshold: 0.1 },
 );
 
-document.querySelectorAll(".reveal-item").forEach((el) => observer.observe(el));
+document.querySelectorAll(".reveal-item").forEach((el) => {
+	observer.observe(el);
+});
 </script>
