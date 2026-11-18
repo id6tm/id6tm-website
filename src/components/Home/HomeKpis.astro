@@ -1,0 +1,51 @@
+---
+import Tile from "@ui/Tile.astro";
+import Medal from "phosphor-astro/Medal.astro";
+import ToggleLeft from "phosphor-astro/ToggleLeft.astro";
+import UsersFour from "phosphor-astro/UsersFour.astro";
+import UsersThree from "phosphor-astro/UsersThree.astro";
+---
+
+<section
+	class="flex flex-col items-center justify-center gap-15 p-30 max-lg:px-12 max-lg:py-22.5 max-sm:gap-10 max-sm:px-5 max-sm:py-15"
+>
+	<div class="flex max-w-198 flex-col gap-8">
+		<h2 class="text-h1 max-sm:text-h2-5 text-center">id6 en chiffres</h2>
+		<p class="text-t2 max-sm:text-t3 text-center">
+			L’innovation pédagogique et numérique au cœur d’id6.
+		</p>
+	</div>
+
+	<div
+		class="flex justify-center gap-6 max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3"
+	>
+		<Tile
+			kpi="+1M"
+			title="Personnes touchées"
+			description="Des dispositifs à l’impact social éprouvé."
+		>
+			<UsersFour slot="tile-icon" />
+		</Tile>
+		<Tile
+			kpi="2000"
+			title="Année de création"
+			description="Des années de création et d’innovation."
+		>
+			<ToggleLeft slot="tile-icon" />
+		</Tile>
+		<Tile
+			kpi="24"
+			title="Membres de l’association"
+			description="Des expertises complémentaires."
+		>
+			<UsersThree slot="tile-icon" />
+		</Tile>
+		<Tile
+			kpi="16"
+			title="Projets primés en Europe"
+			description="Des innovations reconnues."
+		>
+			<Medal slot="tile-icon" />
+		</Tile>
+	</div>
+</section>

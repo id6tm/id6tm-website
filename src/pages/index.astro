@@ -1,14 +1,21 @@
 ---
+import HomeHeroeImage from "@assets/heroes/home.png?url";
+import HomeKpis from "@components/Home/HomeKpis.astro";
+import Hero from "@ui/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<main class="px-30 py-10 max-md:p-3">
-		<section class="flex flex-col gap-4">
-			<h1 class="text-h1">
-				Site en {" "}
-				<span class="text-orange">construction</span>
-			</h1>
-		</section>
+	<main class="flex flex-col">
+		<Hero
+			title="L’innovation au service des transitions professionnelles"
+			subTitle="Depuis plus de 25 ans, id6 éclaire l’orientation et accompagne les parcours professionnels."
+			image={{
+				src: HomeHeroeImage,
+				alt: "id6-banner",
+			}}
+		/>
+
+		<HomeKpis />
 	</main>
 </Layout>
