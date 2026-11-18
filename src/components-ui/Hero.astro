@@ -1,4 +1,7 @@
 ---
+import type { JSX } from "astro/jsx-runtime";
+import Button from "./Button.svelte";
+
 interface Props {
 	title: string;
 	subTitle: string;
@@ -6,9 +9,14 @@ interface Props {
 		src: string;
 		alt: string;
 	};
+	buttonProps?: {
+		href: string;
+		label: string;
+		Icon: JSX.Element;
+	};
 }
 
-const { title, subTitle, image } = Astro.props;
+const { title, subTitle, image, buttonProps } = Astro.props;
 ---
 
 <section
@@ -18,11 +26,20 @@ const { title, subTitle, image } = Astro.props;
 	aria-label={image.alt}
 >
 	<div
-		class="flex h-198 items-center justify-center max-sm:h-152.5 max-sm:px-5"
+		class="flex h-198 flex-col items-center justify-center gap-18 max-sm:h-152.5 max-sm:px-5"
 	>
 		<div class="flex max-w-198 flex-col items-center gap-12">
 			<h1 class="text-h0-title max-sm:text-h2 text-center">{title}</h1>
 			<p class="text-t1 max-sm:text-t2 text-center">{subTitle}</p>
 		</div>
+
+		{buttonProps && (
+			<a href={buttonProps.href}>
+				<Button client:load color="orange" size="medium">
+					{buttonProps.label}
+					<buttonProps.Icon slot="btnIcon" />
+				</Button>
+			</a>
+		)}
 	</div>
 </section>

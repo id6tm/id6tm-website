@@ -9,25 +9,26 @@ import AppLayout from "@layouts/AppLayout.astro";
 import Hero from "@ui/Hero.astro";
 ---
 
-<AppLayout>
-	<main class="flex flex-col">
-		<Hero
-			title="L’innovation au service des transitions professionnelles"
-			subTitle="Depuis plus de 25 ans, id6 éclaire l’orientation et accompagne les parcours professionnels."
-			image={{
-				src: HomeHeroeImage,
-				alt: "id6-banner",
-			}}
-		/>
+<AppLayout
+	title="id6"
+	desc="L’innovation au service des transitions professionnelles"
+>
+	<Hero
+		title="L’innovation au service des transitions professionnelles"
+		subTitle="Depuis plus de 25 ans, id6 éclaire l’orientation et accompagne les parcours professionnels."
+		image={{
+			src: HomeHeroeImage,
+			alt: "id6-banner",
+		}}
+	/>
 
-		<HomeKpis />
+	<HomeKpis />
 
-		<ProjectsSection />
+	<ProjectsSection />
 
-		<TeamSection />
+	<TeamSection />
 
-		<PartnersSection />
+	<PartnersSection />
 
-		<NewsSection />
-	</main>
+	<NewsSection />
 </AppLayout>

@@ -1,0 +1,25 @@
+---
+import Diagoriente from "@assets/heroes/diagoriente.png?url";
+import AppLayout from "@layouts/AppLayout.astro";
+import Hero from "@ui/Hero.astro";
+import ArrowSquareOut from "phosphor-astro/ArrowSquareOut.astro";
+---
+
+<AppLayout
+	title="Diagoriente : service public pour l'orientation professionnelle"
+	desc="Découvrez Diagoriente, le service public numérique pour valoriser les compétences et accompagner les transitions professionnelles."
+>
+	<Hero
+		title="Diagoriente, soutenir les transitions professionnelles"
+		subTitle="Diagoriente est un service public qui soutient le pouvoir d'agir des individus et accompagne la construction de parcours professionnels."
+		image={{
+			src: Diagoriente,
+			alt: "diagoriente-banner",
+		}}
+		buttonProps={{
+			href: "https://plateforme.diagoriente.fr/",
+			label: "Accéder",
+			Icon: ArrowSquareOut,
+		}}
+	/>
+</AppLayout>
