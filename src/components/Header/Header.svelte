@@ -10,7 +10,7 @@ import {
 	StudentIcon,
 } from "phosphor-svelte";
 import { MediaQuery } from "svelte/reactivity";
-import type { HeaderLink } from "./Header.interfaces";
+import type { HeaderLink, ProjectLink } from "./Header.interfaces";
 import HeaderDesktopNav from "./HeaderDesktopNav.svelte";
 import HeaderLogo from "./HeaderLogo.svelte";
 import HeaderMobileNav from "./HeaderMobileNav.svelte";
@@ -36,7 +36,7 @@ const links: HeaderLink[] = [
 		href: "#",
 	},
 ];
-const projectsLinks = [
+const projectsLinks: ProjectLink[] = [
 	{
 		label: "Diagoriente",
 		href: "#",

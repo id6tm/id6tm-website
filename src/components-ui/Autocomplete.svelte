@@ -65,15 +65,14 @@ side, the component will still be type-checked correctly.
 		)}
 	>
 		<Combobox.Input {...mergedInputProps} class="outline-hidden" />
-		<Combobox.Trigger
-			><MagnifyingGlassIcon class="size-6 max-md:size-4" /></Combobox.Trigger
-		>
+		<MagnifyingGlassIcon class="size-6 max-md:size-4" />
 	</div>
 	<Combobox.Portal>
 		<Combobox.Content
 			{...contentProps}
 			class="border-grey-60 z-50 max-h-(--bits-combobox-content-available-height) w-(--bits-combobox-anchor-width) min-w-[(--bits-combobox-anchor-width)] rounded border bg-white p-2 shadow-lg outline-hidden select-none"
 			sideOffset={10}
+			{customAnchor}
 		>
 			{#each filteredItems as item, i (i + item.value)}
 				<Combobox.Item
