@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import LogoBlack from "@assets/id6-logo/icon-black.svg";
+import LogoOrange from "@assets/id6-logo/icon-orange.svg";
+import LogoWhite from "@assets/id6-logo/icon-white.svg";
+import { cn } from "@utils/cn";
+
+const logoColors = {
+	ORANGE: "orange",
+	BLACK: "black",
+	WHITE: "white",
+} as const;
+type LogoColor = (typeof logoColors)[keyof typeof logoColors];
+
+const logoSizes = {
+	SMALL: "small",
+	MEDIUM: "medium",
+	BIG: "big",
+} as const;
+type LogoSize = (typeof logoSizes)[keyof typeof logoSizes];
+
+const logoLayouts = {
+	ICON_ONLY: "icon-only",
+	VERTICAL: "vertical",
+	HORIZONTAL: "horizontal",
+} as const;
+type LogoLayout = (typeof logoLayouts)[keyof typeof logoLayouts];
+
+const textModes = {
+	ACRONYM: "acronym",
+	FULL_TEXT: "full-text",
+} as const;
+type TextMode = (typeof textModes)[keyof typeof textModes];
+
+interface Props {
+	/**
+	 * default — orange
+	 */
+	color?: LogoColor;
+	/**
+	 * default — small
+	 */
+	size?: LogoSize;
+	/**
+	 * default — icon only
+	 */
+	layout?: LogoLayout;
+	/**
+	 * default — acronym
+	 */
+	textMode?: TextMode;
+}
+const {
+	color = logoColors.ORANGE,
+	size = logoSizes.SMALL,
+	layout = logoLayouts.ICON_ONLY,
+	textMode = textModes.ACRONYM,
+} = Astro.props;
+
+const logosMapping: Record<
+	LogoColor,
+	typeof LogoOrange | typeof LogoBlack | typeof LogoWhite
+> = {
+	[logoColors.ORANGE]: LogoOrange,
+	[logoColors.BLACK]: LogoBlack,
+	[logoColors.WHITE]: LogoWhite,
+};
+---
+
+<div
+	class={cn(
+		"font-outfit flex max-w-42.5 items-center gap-3.5 font-bold",
+		size === logoSizes.SMALL && "text-[16px] tracking-[-0.16px]",
+		size === logoSizes.MEDIUM && "text-[24px] tracking-[-0.24px]",
+		size === logoSizes.BIG && "text-[40px] leading-[90%] tracking-[-0.4px]",
+		layout === logoLayouts.VERTICAL && "flex-col gap-2.5",
+	)}
+>
+	<Image
+		alt="logo id6"
+		src={logosMapping[color]}
+		class={cn(
+			size === logoSizes.BIG && "size-15 max-w-15",
+			size === logoSizes.MEDIUM && "size-10 max-w-10",
+			size === logoSizes.SMALL && "size-6 max-w-6",
+		)}
+	/>
+	{textMode === textModes.FULL_TEXT
+		? "international développement système"
+		: "id6"}
+</div>

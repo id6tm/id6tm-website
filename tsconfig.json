@@ -4,8 +4,10 @@
 	"exclude": ["dist"],
 	"compilerOptions": {
 		"paths": {
+			"@assets/*": ["./src/assets/*"],
 			"@components/*": ["./src/components/*"],
-			"@ui/*": ["./src/components-ui/*"]
+			"@ui/*": ["./src/components-ui/*"],
+			"@utils/*": ["./src/utils/*"]
 		}
 	}
 }

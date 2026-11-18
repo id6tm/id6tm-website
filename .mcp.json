@@ -1,12 +1,20 @@
 {
-  "mcpServers": {
-    "vercel": {
-      "type": "http",
-      "url": "https://mcp.vercel.com"
-    },
-    "astro-docs": {
-      "type": "http",
-      "url": "https://mcp.docs.astro.build/mcp"
-    }
-  }
+	"$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
+	"mcpServers": {
+		"vercel": {
+			"type": "http",
+			"url": "https://mcp.vercel.com",
+			"enabled": false
+		},
+		"astro-docs": {
+			"type": "http",
+			"url": "https://mcp.docs.astro.build/mcp",
+			"enabled": true
+		},
+		"svelte": {
+			"type": "http",
+			"url": "https://mcp.svelte.dev/mcp",
+			"enabled": true
+		}
+	}
 }
