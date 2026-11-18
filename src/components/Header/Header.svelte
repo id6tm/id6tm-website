@@ -16,7 +16,7 @@ import HeaderLogo from "./HeaderLogo.svelte";
 import HeaderMobileNav from "./HeaderMobileNav.svelte";
 
 // small tablets and mobile
-const isMobile = new MediaQuery("max-width: 768px");
+const isMobile = new MediaQuery("max-width: 1024px");
 
 const links: HeaderLink[] = [
 	{

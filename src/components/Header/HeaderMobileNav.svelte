@@ -18,7 +18,7 @@ const { links, projectsLinks }: Readonly<HeaderNavProps> = $props();
 			{#each projectsLinks as { Icon, href, label } (href + label)}
 				<a
 					{href}
-					class="text-grey-60 text-tags hover:bg-grey-20 hover:text-blue flex items-center gap-2.5 rounded px-3 py-2.5 transition-colors"
+					class="text-grey-60 text-tags flex items-center gap-2.5 rounded px-3 py-2.5"
 					style="font-size: 15px;"
 				>
 					<Icon class="size-5" />

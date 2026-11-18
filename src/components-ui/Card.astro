@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { cn } from "@utils/cn";
 import type { ImageMetadata } from "astro";
+import { cardColors } from "./constants";
 
 const cardOrientations = {
 	HORIZONTAL: "horizontal",
@@ -9,11 +10,6 @@ const cardOrientations = {
 } as const;
 type CardOrientation = (typeof cardOrientations)[keyof typeof cardOrientations];
 
-const cardColors = {
-	BLUE: "blue",
-	ORANGE: "orange",
-	YELLOW: "yellow",
-} as const;
 type CardColor = (typeof cardColors)[keyof typeof cardColors];
 
 const cardColorVars: Record<CardColor, string> = {
