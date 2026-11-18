@@ -79,7 +79,7 @@ const isSnippet = (val: unknown): val is Snippet =>
 >
 	{@render children()}
 	{#if btnIcon}
-		<i class={cn(size === "medium" ? "[&>svg]:size-8" : "[&>svg]:size-6")}>
+		<i class={cn(size === "medium" ? "[&_svg]:size-8" : "[&_svg]:size-6")}>
 			{#if isSnippet(btnIcon)}
 				{@render btnIcon()}
 			{:else}
