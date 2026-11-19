@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import Laptop from "@assets/diagoriente/laptop.jpg";
+import SideBySideLayout from "@layouts/SideBySideLayout.astro";
+---
+
+<SideBySideLayout>
+	<Image
+		slot="left-content"
+		src={Laptop}
+		alt="diagoriente-desk"
+		class="size-147 object-contain max-xl:size-113.5 max-lg:size-87.5"
+	/>
+
+	<div slot="right-content" class="flex flex-col gap-12">
+		<h2 class="text-h1 max-sm:text-h2-5">
+			Un outil pour les professionnels de l’accompagnement
+		</h2>
+		<p class="text-t2 max-sm:text-t3">
+			Diagoriente{" "}<b>accompagne également les professionnels</b>{" "}de
+			l'orientation et de l'insertion dans leurs pratiques.<br><br>
+			Grâce à un espace dédié, ils peuvent{" "}
+			<b>suivre les parcours</b>{" "}
+			des personnes accompagnées, accéder à des{" "}
+			<b>ressources pédagogiques</b>{" "}
+			et s'appuyer sur une démarche qui place les individus au cœur de
+			l'accompagnement.
+		</p>
+	</div>
+</SideBySideLayout>

@@ -10,7 +10,7 @@ const { links, projectsLinks }: Readonly<HeaderNavProps> = $props();
 	{#each links as link (link.href + link.label)}
 		<a
 			href={link.href}
-			class="text-grey-60 text-tag hover:bg-grey-20 hover:text-blue rounded px-3 py-2.5"
+			class="text-grey-60 text-tag hover:bg-grey-20 hover:text-blue rounded px-3 py-2.5 transition-colors"
 		>
 			{link.label}
 		</a>

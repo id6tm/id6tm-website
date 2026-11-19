@@ -1,0 +1,82 @@
+---
+import SectionLayout from "@layouts/SectionLayout.astro";
+import Tile from "@ui/Tile.astro";
+import Calendar from "phosphor-astro/Calendar.astro";
+import MagnifyingGlass from "phosphor-astro/MagnifyingGlass.astro";
+import UsersFour from "phosphor-astro/UsersFour.astro";
+import UsersThree from "phosphor-astro/UsersThree.astro";
+---
+
+<SectionLayout
+	title="Chiffres-clés"
+	subTitle="Depuis 2018, Diagoriente accompagne les transitions professionnelles à grande échelle, grâce à des outils numériques accessibles gratuitement et à des ressources pensées pour les professionnels de terrain."
+>
+	<div
+		class="flex justify-center gap-6 max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3"
+	>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 0ms"
+		>
+			<Tile
+				kpi="+1M"
+				title="Usagers"
+				description="depuis le lancement du service."
+			>
+				<UsersFour slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 300ms"
+		>
+			<Tile kpi="+200k" title="Nouveaux utilisateurs" description="en 2025.">
+				<Calendar slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 600ms"
+		>
+			<Tile
+				kpi="+20k"
+				title="Professionnels outillés"
+				description="pour accompagner les parcours."
+			>
+				<UsersThree slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 900ms"
+		>
+			<Tile
+				kpi="+600k"
+				title="Requêtes API par mois"
+				description="sur le moteur de recherches Diagoriente."
+			>
+				<MagnifyingGlass slot="tile-icon" />
+			</Tile>
+		</div>
+	</div>
+</SectionLayout>
+
+<script>
+const observer = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				// Remove the initial offset and add the final position
+				entry.target.classList.remove("translate-y-30");
+				entry.target.classList.add("opacity-100", "translate-y-0");
+				observer.unobserve(entry.target);
+			}
+		});
+	},
+	{ threshold: 0.1 },
+);
+
+document.querySelectorAll(".reveal-item").forEach((el) => {
+	observer.observe(el);
+});
+</script>

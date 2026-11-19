@@ -1,5 +1,11 @@
 ---
 import Diagoriente from "@assets/heroes/diagoriente.png?url";
+import CtaSection from "@components/diagoriente/CtaSection.astro";
+import IntroductionSection from "@components/diagoriente/IntroductionSection.astro";
+import KpisSection from "@components/diagoriente/KpisSection.astro";
+import ProfessionalsSection from "@components/diagoriente/ProfessionalsSection.astro";
+import QnaSection from "@components/diagoriente/QnaSection.astro";
+import RessourcesSection from "@components/diagoriente/RessourcesSection.astro";
 import AppLayout from "@layouts/AppLayout.astro";
 import Hero from "@ui/Hero.astro";
 import ArrowSquareOut from "phosphor-astro/ArrowSquareOut.astro";
@@ -22,4 +28,16 @@ import ArrowSquareOut from "phosphor-astro/ArrowSquareOut.astro";
 			Icon: ArrowSquareOut,
 		}}
 	/>
+
+	<IntroductionSection />
+
+	<KpisSection />
+
+	<ProfessionalsSection />
+
+	<RessourcesSection />
+
+	<QnaSection />
+
+	<CtaSection />
 </AppLayout>
