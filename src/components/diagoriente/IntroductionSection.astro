@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import Desk from "@assets/diagoriente/desk.jpg";
+import SideBySideLayout from "@layouts/SideBySideLayout.astro";
+---
+
+<SideBySideLayout>
+	<div slot="left-content" class="flex flex-col gap-12">
+		<h2 class="text-h1 max-sm:text-h2-5">Diagoriente, c’est quoi ?</h2>
+		<p class="text-t2 max-sm:text-t3">
+			Diagoriente est un service public numérique{" "}
+			<b>dédié aux parcours et aux transitions professionnelles</b>, financé par
+			la DGEFP du Ministère du travail et opéré par ID6.<br>
+			<br>Au cœur du projet : une démarche qui place{" "}
+			<b>chaque individu au centre de son parcours</b>. Diagoriente encourage la
+			réflexivité et l'expérimentation pour permettre à chacun de mieux se
+			connaître, d'élargir ses horizons et de faire des choix éclairés.<br>
+			<br>
+			Deux{" "}
+			<b>plateformes</b>{" "}
+			numériques et des{" "}<b>ressources</b>{" "}
+			pédagogiques viennent appuyer cette démarche.
+		</p>
+	</div>
+
+	<Image
+		slot="right-content"
+		src={Desk}
+		alt="diagoriente-desk"
+		class="size-147 object-contain max-xl:size-113.5 max-lg:size-87.5"
+	/>
+</SideBySideLayout>

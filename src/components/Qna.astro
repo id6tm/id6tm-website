@@ -1,0 +1,52 @@
+---
+import SideBySideLayout from "@layouts/SideBySideLayout.astro";
+import Accordion from "@ui/Accordion.svelte";
+import Button from "@ui/Button.svelte";
+import type { AccordionItem } from "@ui/types";
+import Chats from "phosphor-astro/Chats.astro";
+
+interface Props {
+	topic: string;
+	items: AccordionItem[];
+}
+
+const { topic, items } = Astro.props;
+---
+
+<SideBySideLayout>
+	<div slot="left-content" class="flex flex-col gap-12 lg:w-70.5">
+		<h2 class="text-h1 max-sm:text-h2-5">Foire aux questions</h2>
+		<!-- desktop -->
+		<p class="text-t2 max-sm:text-t3 max-lg:hidden">
+			Vous vous interrogez sur {topic} ?{" "}
+			<b>Retrouvez les réponses aux questions les plus fréquentes</b>.<br><br>
+			Vous n’avez pas trouvé la réponse à votre question ?{" "}
+			<b>Notre équipe vous répond !</b>
+		</p>
+		<!-- desktop -->
+		<div class="max-lg:hidden">
+			<Button color="black">Nous contacter <Chats slot="btnIcon" /> </Button>
+		</div>
+		<!-- mobile -->
+		<p class="text-t2 max-sm:text-t3 lg:hidden">
+			Vous vous interrogez sur {topic} ?{" "}
+			<b>Retrouvez les réponses aux questions les plus fréquentes</b>.
+		</p>
+	</div>
+
+	<div slot="right-content" class="max-lg:max-w-198 lg:w-147">
+		<Accordion client:visible items={items} />
+	</div>
+
+	<!-- mobile -->
+	<div
+		slot="right-content"
+		class="flex items-center gap-8 max-sm:flex-col lg:hidden"
+	>
+		<p class="text-t2 max-sm:text-t3">
+			Vous n’avez pas trouvé la réponse à votre question ?{" "}<br>
+			<b>Notre équipe vous répond !</b>
+		</p>
+		<Button color="black">Nous contacter <Chats slot="btnIcon" /> </Button>
+	</div>
+</SideBySideLayout>

@@ -3,6 +3,12 @@ import { Font } from "astro:assets";
 import "../styles/global.css";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header/Header.svelte";
+
+interface Props {
+	title: string;
+	desc: string;
+}
+const { title, desc } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,11 +21,12 @@ import Header from "@components/Header/Header.svelte";
 		<Font cssVariable="--font-redhat" preload />
 		<Font cssVariable="--font-outfit" preload />
 		<Font cssVariable="--font-grotesk" preload />
-		<title>Id6 - Site en construction</title>
+		<title>{title}</title>
+		<meta name="description" content={desc}>
 	</head>
 	<body class="font-redhat text-black">
 		<Header client:load />
-		<slot />
+		<main class="flex flex-col"><slot /></main>
 		<Footer />
 	</body>
 </html>

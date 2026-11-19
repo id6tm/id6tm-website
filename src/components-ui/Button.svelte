@@ -73,7 +73,7 @@ const isSnippet = (val: unknown): val is Snippet =>
 
 <Button.Root
 	{type}
-	class={`text-button flex cursor-pointer items-center gap-2.5 rounded transition-colors duration-300 ${variantAndColorClasses[variant][color]} ${sizeClasses[size]}`}
+	class={`text-button flex w-fit cursor-pointer items-center gap-2.5 rounded transition-colors duration-300 ${variantAndColorClasses[variant][color]} ${sizeClasses[size]}`}
 	{onclick}
 	{disabled}
 >

@@ -9,7 +9,7 @@ const { projectsLinks }: Readonly<Pick<HeaderNavProps, "projectsLinks">> =
 
 <DropdownMenu.Root>
 	<DropdownMenu.Trigger
-		class="text-grey-60 text-tag hover:bg-grey-20 hover:text-blue flex cursor-pointer items-center gap-2.5 rounded px-3 py-2.5"
+		class="text-grey-60 text-tag hover:bg-grey-20 hover:text-blue flex cursor-pointer items-center gap-2.5 rounded px-3 py-2.5 transition-colors"
 	>
 		<span>Projets</span>
 		<CaretDownIcon class="size-6" />

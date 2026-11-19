@@ -1,0 +1,28 @@
+---
+import DiagoCtaBanner from "@assets/ctas/diago-cta.jpg?url";
+import CallToAction from "@ui/CallToAction.svelte";
+import { ShrimpIcon } from "phosphor-svelte";
+---
+
+<div
+	class="bg-cover bg-center bg-no-repeat p-30"
+	style={`background-image: url('${DiagoCtaBanner}');`}
+	role="img"
+	aria-label="diagoriente-cta-banner"
+>
+	<CallToAction
+		variant="big"
+		title="Découvrez Diagoriente"
+		description="Explorez les outils numériques et les ressources pédagogiques développés pour accompagner l'orientation et les transitions professionnelles."
+		primaryActionProps={{
+			label: "Accéder à Diagoriente",
+			href: "https://plateforme.diagoriente.fr/",
+			btnIcon: ShrimpIcon,
+		}}
+		secondaryActionProps={{
+			label: "Se connecter à l'espace pro",
+			href: "https://plateforme-pro.diagoriente.fr/",
+			btnIcon: ShrimpIcon,
+		}}
+	/>
+</div>

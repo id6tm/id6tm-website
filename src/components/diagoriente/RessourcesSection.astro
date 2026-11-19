@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import Ressources from "@assets/diagoriente/ressources.jpg";
+import SideBySideLayout from "@layouts/SideBySideLayout.astro";
+import Button from "@ui/Button.svelte";
+import ArrowSquareOut from "phosphor-astro/ArrowSquareOut.astro";
+---
+
+<SideBySideLayout>
+	<div slot="left-content" class="flex flex-col gap-12">
+		<h2 class="text-h1 max-sm:text-h2-5">
+			Des ressources pour accompagner les pratiques
+		</h2>
+		<p class="text-t2 max-sm:text-t3">
+			Diagoriente met à disposition une{" "}
+			<b>bibliothèque de ressources</b>{" "}
+			pédagogiques clés en main pour l’animation d’ateliers. Ces fiches, pensées
+			comme un véritable fil rouge, guide les participants, facilite les
+			échanges et{" "}
+			<b>encourager la mise en réflexivité</b>.<br><br>
+			En parallèle, des{" "}
+			<b>contenus de professionnalisation</b>{" "}
+			sont proposés pour accompagner les professionnels dans l’évolution de leur
+			posture et de leurs pratiques au quotidien.
+		</p>
+		<a href="https://plateforme-pro.diagoriente.fr/">
+			<Button color="black">
+				Explorer l'espace pro
+				<ArrowSquareOut slot="btnIcon" />
+			</Button>
+		</a>
+	</div>
+
+	<Image
+		slot="right-content"
+		src={Ressources}
+		alt="diagoriente-desk"
+		class="size-147 object-contain max-xl:size-113.5 max-lg:size-87.5"
+	/>
+</SideBySideLayout>

@@ -39,7 +39,7 @@ const links: HeaderLink[] = [
 const projectsLinks: ProjectLink[] = [
 	{
 		label: "Diagoriente",
-		href: "#",
+		href: "/diagoriente",
 		Icon: SparkleIcon,
 	},
 	{
