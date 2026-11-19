@@ -29,12 +29,14 @@ let {
 					class="text-orange text-h2-5 hover:text-blue [&[data-state=open]>span]:text-blue [&[data-state=open]>svg]:text-blue flex w-full cursor-pointer items-center justify-between gap-6 text-left transition-colors duration-300 max-md:gap-3 [&[data-state=open]>svg]:-rotate-180"
 					><span>{item.title}</span>
 					<CaretCircleDownIcon
-						class="size-8 shrink-0 transition-all duration-300 max-md:size-4.5"
+						class="size-8 shrink-0 transition-transform duration-300 max-md:size-4.5"
 					/>
 				</Accordion.Trigger>
 			</Accordion.Header>
-			<Accordion.Content class="text-t2">
-				{@html item.content}
+			<Accordion.Content
+				class="text-t2 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden"
+			>
+				<div class="p-4">{@html item.content}</div>
 			</Accordion.Content>
 		</Accordion.Item>
 		<Separator />
