@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import BoxVisual from "@assets/oribox/box-visual.jpg";
+import SideBySideLayout from "@layouts/SideBySideLayout.astro";
+---
+
+<SideBySideLayout>
+	<div slot="left-content" class="flex flex-col gap-12">
+		<h2 class="text-h1 max-sm:text-h2-5">Oribox, c’est quoi ?</h2>
+		<p class="text-t2 max-sm:text-t3">
+			Oribox est un{" "}<b>kit ludopédagogique</b>{" "}dédié à l’orientation
+			professionnelle,{" "}<b
+				>conçu pour et par les conseillers et professionnels</b
+			>{" "}de l’accompagnement à l’orientation et à l’insertion
+			professionnelle.<br><br>
+
+			À travers plusieurs jeux et animations, il permet{" "}<b
+				>d’aborder les notions liées à l’orientation</b
+			>{" "}telles que les compétences, les intérêts, les métiers ou encore le
+			CV, tout en{" "}<b>facilitant le dialogue</b>{" "}et la réflexion sur soi.<br><br>
+
+			En individuel ou en collectif, Oribox propose{" "}<b
+				>une approche ludique</b
+			>{" "}pour accompagner chacun dans l’élaboration de son projet
+			professionnel.
+		</p>
+	</div>
+
+	<Image
+		slot="right-content"
+		src={BoxVisual}
+		alt="oribox-box-visual"
+		class="size-147 object-contain max-xl:size-113.5 max-lg:size-87.5"
+	/>
+</SideBySideLayout>

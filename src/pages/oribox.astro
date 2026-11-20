@@ -1,0 +1,37 @@
+---
+import Oribox from "@assets/heroes/oribox.png?url";
+import AnimationsSection from "@components/oribox/AnimationsSection.astro";
+import CommunitySection from "@components/oribox/CommunitySection.astro";
+import IntroductionSection from "@components/oribox/IntroductionSection.astro";
+import KpisSection from "@components/oribox/KpisSection.astro";
+import AppLayout from "@layouts/AppLayout.astro";
+import Hero from "@ui/Hero.astro";
+import ShoppingCartSimple from "phosphor-astro/ShoppingCartSimple.astro";
+---
+
+<AppLayout
+	title="Oribox : jeux pour l'orientation professionnelle"
+	desc="Découvrez Oribox, le kit ludopédagogique pour explorer les compétences, les centres d'intérêt et les métiers à travers le jeu."
+>
+	<Hero
+		title="Oribox, kit ludopédagogique pour l’orientation pro"
+		subTitle="Ouvrez le dialogue sur les compétences, les intérêts, les métiers, grâce à nos jeux conçus pour accompagner la réflexion sur l’orientation et l’insertion pro."
+		image={{
+			src: Oribox,
+			alt: "oribox-banner",
+		}}
+		buttonProps={{
+			href: "#",
+			label: "Commander",
+			Icon: ShoppingCartSimple,
+		}}
+	/>
+
+	<IntroductionSection />
+
+	<KpisSection />
+
+	<CommunitySection />
+
+	<AnimationsSection />
+</AppLayout>

@@ -44,7 +44,7 @@ const projectsLinks: ProjectLink[] = [
 	},
 	{
 		label: "Oribox",
-		href: "#",
+		href: "/oribox",
 		Icon: CubeIcon,
 	},
 	{

@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import AdaptPersona from "@assets/oribox/adapt-persona.jpg";
+import SideBySideLayout from "@layouts/SideBySideLayout.astro";
+---
+
+<SideBySideLayout>
+	<div slot="left-content" class="flex flex-col gap-12">
+		<h2 class="text-h1 max-sm:text-h2-5">Créez vos propres animations</h2>
+		<p class="text-t2 max-sm:text-t3">
+			Oribox propose une animation pour chaque jeu afin de{" "}<b
+				>faciliter la prise en main</b
+			>{" "}du matériel. Mais il a été pensé comme une{" "}<b
+				>véritable boîte à outils</b
+			>{" "}! Combinez les cartes, adaptez les règles, imaginez de nouvelles
+			animations pédagogiques selon vos besoins et vos publics. Et pourquoi pas{" "}<b
+				>partager ensuite vos créations</b
+			>{" "}avec la communauté ?
+		</p>
+	</div>
+
+	<Image
+		slot="right-content"
+		src={AdaptPersona}
+		alt="oribox-adapt-persona"
+		class="size-147 object-contain max-xl:size-113.5 max-lg:size-87.5"
+	/>
+</SideBySideLayout>

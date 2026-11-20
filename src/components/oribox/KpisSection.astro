@@ -1,0 +1,86 @@
+---
+import SectionLayout from "@layouts/SectionLayout.astro";
+import Tile from "@ui/Tile.astro";
+import Cards from "phosphor-astro/Cards.astro";
+import Package from "phosphor-astro/Package.astro";
+import ReadCvLogo from "phosphor-astro/ReadCvLogo.astro";
+import UsersThree from "phosphor-astro/UsersThree.astro";
+---
+
+<SectionLayout
+	title="Chiffres-clés"
+	subTitle="18 mois de co-conception avec des professionnels et leurs publics pour créer un kit complet."
+>
+	<div
+		class="flex justify-center gap-6 max-lg:flex-wrap max-lg:gap-5 max-sm:gap-3"
+	>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 0ms"
+		>
+			<Tile
+				kpi="148"
+				title="Cartes à jouer illustrées"
+				description="pour aborder l’orientation sous différents angles."
+			>
+				<Cards slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 300ms"
+		>
+			<Tile
+				kpi="6"
+				title="Animations  de départ"
+				description="pour une prise en main facilitée !"
+			>
+				<ReadCvLogo slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 600ms"
+		>
+			<Tile
+				kpi="100"
+				title="Professionnels impliqués"
+				description="dans la co-conception du matériel pédagogique."
+			>
+				<UsersThree slot="tile-icon" />
+			</Tile>
+		</div>
+		<div
+			class="reveal-item translate-y-30 opacity-0 transition-all duration-700 ease-out"
+			style="transition-delay: 900ms"
+		>
+			<Tile
+				kpi="125€ HT"
+				title="Une boîte complète"
+				description="prête à être utilisée dans vos accompagnements."
+			>
+				<Package slot="tile-icon" />
+			</Tile>
+		</div>
+	</div>
+</SectionLayout>
+
+<script>
+const observer = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				// Remove the initial offset and add the final position
+				entry.target.classList.remove("translate-y-30");
+				entry.target.classList.add("opacity-100", "translate-y-0");
+				observer.unobserve(entry.target);
+			}
+		});
+	},
+	{ threshold: 0.1 },
+);
+
+document.querySelectorAll(".reveal-item").forEach((el) => {
+	observer.observe(el);
+});
+</script>
