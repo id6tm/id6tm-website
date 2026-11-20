@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.agents
+.astro
+.claude
+.codex
+.vscode
+.mcp*
+apm*
